@@ -33,6 +33,7 @@ export function TimeZoneCard({
                         time={ time }
                         day={ day }
                         date={ date }
+                        alignment={ "right" }
                     />
                 </div>
             </div>

@@ -4,12 +4,13 @@ export function LocationTime({
     time,
     location,
     day,
-    date
+    date,
+    alignment
 }) {
     return(
-        <div className="location-time">
-            <h1>{ time }</h1>
-            <h6>{ location } • { day } • { date }</h6>
+        <div className={ alignment && alignment == "right" ? "location-time flex-align-end" : "location-time flex-align-start" }>
+            <h2>{ time }</h2>
+            <h5>{ location } • { day } • { date }</h5>
         </div>
     );
 }

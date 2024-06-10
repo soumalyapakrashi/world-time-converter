@@ -1,7 +1,24 @@
-.location-time > h1 {
+.location-time > h2 {
     color: var(--dark-text-primary);
+    font-family: var(--font-text-primary);
+    font-weight: 500;
 }
 
-.location-time > h6 {
+.location-time > h5 {
     color: var(--dark-text-secondary);
+    font-family: var(--font-text-primary);
+    font-weight: 400;
+}
+
+.location-time {
+    display: flex;
+    flex-direction: column;
+}
+
+.flex-align-start {
+    align-items: start;
+}
+
+.flex-align-end {
+    align-items: end;
 }
