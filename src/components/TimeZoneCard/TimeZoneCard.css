@@ -1,0 +1,35 @@
+.card {
+    background-color: var(--dark-secondary);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.card-container {
+    display: flex;
+    width: 95%;
+    margin: 10px auto;
+    gap: 10px;
+}
+
+.card-img img {
+    height: 70px;
+    width: 110px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.card-body h3 {
+    color: var(--dark-text-primary);
+}
+
+.card-body h4 {
+    color: var(--dark-text-secondary);
+}
+
+.card-body {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}

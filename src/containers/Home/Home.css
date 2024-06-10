@@ -1,4 +1,15 @@
 .main-container {
-    background-color: rgb(7, 0, 36);
+    background-color: var(--dark-primary);
     min-height: 100vh;
+}
+
+.margin-container {
+    width: 90%;
+    margin: auto;
+}
+
+.timezone-card-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 10px;
 }

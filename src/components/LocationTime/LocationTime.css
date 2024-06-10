@@ -1,0 +1,7 @@
+.location-time > h1 {
+    color: var(--dark-text-primary);
+}
+
+.location-time > h6 {
+    color: var(--dark-text-secondary);
+}

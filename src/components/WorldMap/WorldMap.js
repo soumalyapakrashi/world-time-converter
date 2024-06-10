@@ -13,7 +13,7 @@ export function WorldMap({
                 width: width,
                 margin: "auto"
             }}
-            backgroundColor="rgb(7, 0, 36)"
+            backgroundColor="rgb(4, 0, 20)"
             zoomMin={ 1 }
             zoomMax={ 1 }
             onRegionTipShow={(event, label, code) => {

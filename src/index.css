@@ -1,6 +1,12 @@
-body {
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+:root {
+  --dark-primary: rgb(4, 0, 20);
+  --dark-secondary: rgb(40, 35, 59);
+  --dark-text-primary: rgb(242, 242, 242);
+  --dark-text-secondary: rgb(204, 204, 204);
+}
