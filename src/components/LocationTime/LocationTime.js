@@ -8,7 +8,7 @@ export function LocationTime({
     alignment
 }) {
     return(
-        <div className={ alignment && alignment == "right" ? "location-time flex-align-end" : "location-time flex-align-start" }>
+        <div className={ alignment && alignment === "right" ? "location-time flex-align-end" : "location-time flex-align-start" }>
             <h2>{ time }</h2>
             <h5>
                 { location && `${location} • ` }
