@@ -9,7 +9,7 @@ export function Home() {
             <div className="margin-container">
                 <Navbar />
                 <WorldMap 
-                    height={ "50vh" }
+                    height={ "45vh" }
                     width={ "100%" }
                 />
 

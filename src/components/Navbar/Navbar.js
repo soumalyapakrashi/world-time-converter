@@ -1,4 +1,5 @@
 import { LocationTime } from "../LocationTime/LocationTime";
+import "./Navbar.css";
 
 export function Navbar() {
     return(
@@ -9,6 +10,9 @@ export function Navbar() {
                 day={ "Friday" }
                 date={ "26 Nov" }
             />
+            <div>
+                <button>+</button>
+            </div>
         </nav>
     );
 }

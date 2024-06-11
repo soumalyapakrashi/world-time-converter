@@ -1,0 +1,21 @@
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+button {
+    font-family: var(--font-text-primary);
+    font-size: 1.7em;
+    color: blue;
+    background-color: var(--dark-primary);
+    border: 1px solid var(--dark-secondary);
+    width: 36px;
+    height: 36px;
+    border-radius: 8px;
+}
+
+button:hover {
+    cursor: pointer;
+    background-color: var(--dark-secondary);
+}
