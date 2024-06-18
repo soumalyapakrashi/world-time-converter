@@ -1,4 +1,5 @@
 import { DateTime } from "luxon";
+import { useState } from "react";
 import "./LocationTime.css";
 
 export function LocationTime({
@@ -11,12 +12,17 @@ export function LocationTime({
     let date = null;
     
     // By default, as local timezone is selected, we create date in local time
-    let dt = DateTime.local();
+    // let dt = DateTime.local();
+    let [ dt, setDateTime ] = useState(DateTime.local());
 
     // For timezones other than local
     if(timezone !== "local") {
         dt = dt.setZone(timezone);
     }
+
+    setTimeout(() => {
+        setDateTime(DateTime.local());
+    }, 1000);
 
     time = dt.toLocaleString(DateTime.TIME_24_SIMPLE);
     day = dt.toLocaleString({ weekday: 'long' });
