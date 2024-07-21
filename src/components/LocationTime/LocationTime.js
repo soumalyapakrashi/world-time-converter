@@ -1,5 +1,5 @@
 import { DateTime } from "luxon";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "./LocationTime.css";
 
 export function LocationTime({
@@ -12,24 +12,26 @@ export function LocationTime({
     let date = null;
     
     // By default, as local timezone is selected, we create date in local time
-    // let dt = DateTime.local();
-    let [ dt, setDateTime ] = useState(DateTime.local());
+    const [ datetimeObj, setDatetimeObj ] = useState(DateTime.local());
 
-    // For timezones other than local
-    if(timezone !== "local") {
-        dt = dt.setZone(timezone);
-    }
+    useEffect(() => {
+        // For timezones other than local
+        if(timezone !== "local") {
+            setDatetimeObj(prevState => prevState.setZone(timezone));
+        }
 
-    setTimeout(() => {
-        setDateTime(DateTime.local());
-    }, 1000);
+        setTimeout(() => {
+            setDatetimeObj(DateTime.local());
+        }, 1000);
+    }, [ datetimeObj, timezone ])
 
-    time = dt.toLocaleString(DateTime.TIME_24_SIMPLE);
-    day = dt.toLocaleString({ weekday: 'long' });
-    date = dt.toLocaleString({ day: 'numeric', month: 'short' })
+
+    time = datetimeObj.toLocaleString(DateTime.TIME_24_SIMPLE);
+    day = datetimeObj.toLocaleString({ weekday: 'long' });
+    date = datetimeObj.toLocaleString({ day: 'numeric', month: 'short' })
 
     return(
-        <div className={ alignment && alignment === "right" ? "location-time flex-align-end" : "location-time flex-align-start" }>
+        <div className={ alignment === "right" ? "location-time flex-align-end" : "location-time flex-align-start" }>
             <h2>{ time }</h2>
             <h5>
                 { location && `${location} • ` }
