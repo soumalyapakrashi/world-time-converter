@@ -14,9 +14,6 @@ export function TimeZoneCard({
     country,
     pictureUrl,
     timeOffset,
-    time,
-    day,
-    date
 }) {
     return(
         <div className="card">
@@ -30,10 +27,8 @@ export function TimeZoneCard({
                         <h4>{ country }</h4>
                     </div>
                     <LocationTime
-                        time={ time }
-                        day={ day }
-                        date={ date }
                         alignment={ "right" }
+                        timezone={ "Australia/Sydney" }
                     />
                 </div>
             </div>
