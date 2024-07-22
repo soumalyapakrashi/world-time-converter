@@ -25,7 +25,12 @@ export function Home() {
     return(
         <div className="main-container">
             <div className="margin-container">
-                <Navbar />
+                <Navbar>
+                    <div>
+                        <button>+</button>
+                    </div>
+                </Navbar>
+                
                 <WorldMap 
                     height={ "45vh" }
                     width={ "100%" }

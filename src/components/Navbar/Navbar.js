@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { LocationTime } from "../LocationTime/LocationTime";
 import "./Navbar.css";
 
-export function Navbar() {
+export function Navbar({ children }) {
     const [ userLocation, setUserLocation ] = useState(null);
     
     useEffect(() => {
@@ -32,7 +32,7 @@ export function Navbar() {
                 location={ userLocation }
             />
             <div>
-                <button>+</button>
+                { children }
             </div>
         </nav>
     );
