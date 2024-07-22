@@ -32,9 +32,10 @@ export function Home() {
                 />
 
                 <div className="timezone-card-grid">
-                    { locationData.map(data => {
+                    { locationData.map((data, index) => {
                         return(
                             <TimeZoneCard
+                                key={ index }
                                 city={ data.city }
                                 country={ data.country }
                                 pictureUrl={ data.pictureUrl }
