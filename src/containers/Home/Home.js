@@ -29,6 +29,7 @@ export function Home() {
                 <WorldMap 
                     height={ "45vh" }
                     width={ "100%" }
+                    markers={ locationData.map(data => [ data.latitude, data.longitude ]) }
                 />
 
                 <div className="timezone-card-grid">
