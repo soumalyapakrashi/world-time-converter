@@ -30,9 +30,9 @@ export function TimeZoneCard({
     return(
         <div className="card">
             <div className="card-container">
-                <div className="card-img">
+                { pictureUrl && <div className="card-img">
                     <img src={ pictureUrl } alt="city"></img>
-                </div>
+                </div> }
                 <div className="card-body">
                     <div>
                         <h3>{ city } ({ `UTC${offsetInHours > 0 ? "+" : ""}${offsetInHours}` })</h3>
