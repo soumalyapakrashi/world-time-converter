@@ -1,10 +1,3 @@
-.card {
-    background-color: var(--dark-secondary);
-    border-radius: 10px;
-    display: flex;
-    align-items: center;
-}
-
 .card-container {
     display: flex;
     width: 95%;
@@ -19,7 +12,7 @@
     border-radius: 10px;
 }
 
-.card-body h3 {
+.timezonecard-body h3 {
     color: var(--dark-text-primary);
     font-family: var(--font-text-primary);
     font-weight: 500;
@@ -27,14 +20,14 @@
     margin-bottom: 3px;
 }
 
-.card-body h4 {
+.timezonecard-body h4 {
     color: var(--dark-text-secondary);
     font-family: var(--font-text-primary);
     font-weight: 400;
     font-size: 0.9em;
 }
 
-.card-body {
+.timezonecard-body {
     width: 100%;
     display: flex;
     justify-content: space-between;

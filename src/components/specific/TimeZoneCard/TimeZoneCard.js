@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { DateTime } from "luxon";
-import { LocationTime } from "../LocationTime/LocationTime";
+import { LocationTime } from "../LocationTime";
+import { Card } from "../../common/Card";
 import "./TimeZoneCard.css";
 
 export function TimeZoneCard({
@@ -28,12 +29,11 @@ export function TimeZoneCard({
     const offsetInHours = offsetInMinutes / 60;
 
     return(
-        <div className="card">
-            <div className="card-container">
-                { pictureUrl && <div className="card-img">
-                    <img src={ pictureUrl } alt="city"></img>
-                </div> }
-                <div className="card-body">
+        <Card
+            pictureUrl={ pictureUrl }
+            pictureAltText={ "city" }
+            cardBody={
+                <div className="timezonecard-body">
                     <div>
                         <h3>{ city } ({ `UTC${offsetInHours > 0 ? "+" : ""}${offsetInHours}` })</h3>
                         <h4>{ country }</h4>
@@ -43,7 +43,7 @@ export function TimeZoneCard({
                         timezone={ timezone }
                     />
                 </div>
-            </div>
-        </div>
+            }
+        />
     );
 }

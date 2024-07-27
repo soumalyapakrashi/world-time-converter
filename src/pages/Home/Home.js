@@ -1,9 +1,10 @@
 import { useState } from "react";
-import { Navbar } from "../../components/Navbar/Navbar";
-import { TimeZoneCard } from "../../components/TimeZoneCard/TimeZoneCard";
-import { WorldMap } from "../../components/WorldMap/WorldMap";
+import { Navbar } from "../../components/common/Navbar";
+import { TimeZoneCard } from "../../components/specific/TimeZoneCard";
+import { WorldMap } from "../../components/common/WorldMap";
+import { LocationSearchModal } from "../../components/specific/LocationSearchModal";
+import { Button } from "../../components/common/Button";
 import "./Home.css";
-import { Modal } from "../../components/Modal/Modal";
 
 export function Home() {
     const [ locationData, setLocationData ] = useState([]);
@@ -14,7 +15,6 @@ export function Home() {
     }
 
     const addToLocationData = locationData => {
-        console.log(locationData);
         setLocationData(prevState => [ ...prevState, locationData ]);
     }
 
@@ -23,9 +23,10 @@ export function Home() {
             <div className="margin-container">
                 <Navbar>
                     <div>
-                        <button onClick={ toggleLocationInputModal }>
-                            +
-                        </button>
+                        <Button
+                            text={ "+" }
+                            onClickHandler={ toggleLocationInputModal }
+                        />
                     </div>
                 </Navbar>
 
@@ -52,7 +53,7 @@ export function Home() {
 
                 {
                     showLocationInputModal && 
-                    <Modal 
+                    <LocationSearchModal 
                         closeModal={ toggleLocationInputModal }
                         addData={ addToLocationData }
                     /> 

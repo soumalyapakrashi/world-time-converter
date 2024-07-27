@@ -1,13 +1,17 @@
+import { useRef } from "react";
 import { VectorMap } from "@react-jvectormap/core";
 import { worldMill } from "@react-jvectormap/world";
 
 export function WorldMap({
     height,
     width,
-    markers = null
+    markers = []
 }) {
+    const mapRef = useRef();
+    
     return(
         <VectorMap
+            mapRef={ mapRef }
             map={ worldMill }
             style={{
                 height: height,

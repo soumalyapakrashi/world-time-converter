@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { LocationTime } from "../LocationTime/LocationTime";
+import { LocationTime } from "../../specific/LocationTime";
 import "./Navbar.css";
 
 export function Navbar({ children }) {
