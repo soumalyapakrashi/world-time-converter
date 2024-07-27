@@ -1,12 +1,17 @@
+import { useRef } from "react";
 import { VectorMap } from "@react-jvectormap/core";
 import { worldMill } from "@react-jvectormap/world";
 
 export function WorldMap({
     height,
-    width
+    width,
+    markers = []
 }) {
+    const mapRef = useRef();
+    
     return(
         <VectorMap
+            mapRef={ mapRef }
             map={ worldMill }
             style={{
                 height: height,
@@ -28,10 +33,7 @@ export function WorldMap({
                     fill: "white"
                 }
             }}
-            markers={[
-                [ -33.86785000, 151.20732000 ],
-                [ 40.71277530, -74.00597280 ]
-            ]}
+            markers={ markers }
             onMarkerTipShow={(event, label, code) => {
                 event.preventDefault();
             }}
