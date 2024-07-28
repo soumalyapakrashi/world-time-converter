@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Navbar } from "../../components/common/Navbar";
 import { TimeZoneCard } from "../../components/specific/TimeZoneCard";
 import { WorldMap } from "../../components/common/WorldMap";
@@ -9,8 +9,14 @@ import "./Home.css";
 export function Home() {
     const [ locationData, setLocationData ] = useState([]);
     const [ showLocationInputModal, setShowLocationInputModal ] = useState(false);
+    const [ showMap, setShowMap ] = useState(true);
+
+    useEffect(() => {
+        setShowMap(true);
+    }, [ locationData ])
 
     const toggleLocationInputModal = () => {
+        setShowMap(false);
         setShowLocationInputModal(!showLocationInputModal);
     }
 
@@ -30,26 +36,28 @@ export function Home() {
                     </div>
                 </Navbar>
 
-                <WorldMap 
-                    height={ "45vh" }
-                    width={ "100%" }
-                    markers={ locationData?.map(data => [ data.latitude, data.longitude ]) }
-                />
+                <main id="main-content">
+                    { showMap && <WorldMap 
+                        height={ "45vh" }
+                        width={ "100%" }
+                        markers={ locationData?.map(data => [ data.latitude, data.longitude ]) }
+                    /> }
 
-                <div className="timezone-card-grid">
-                    { locationData?.map((data, index) => {
-                        return(
-                            <TimeZoneCard
-                                key={ index }
-                                city={ data.name }
-                                country={ data.country }
-                                pictureUrl={ data.pictureUrl }
-                                latitude={ data.latitude }
-                                longitude={ data.longitude }
-                            />
-                        )
-                    })}
-                </div>
+                    <div className="timezone-card-grid">
+                        { locationData?.map((data, index) => {
+                            return(
+                                <TimeZoneCard
+                                    key={ index }
+                                    city={ data.name }
+                                    country={ data.country }
+                                    pictureUrl={ data.pictureUrl }
+                                    latitude={ data.latitude }
+                                    longitude={ data.longitude }
+                                />
+                            )
+                        })}
+                    </div>
+                </main>
 
                 {
                     showLocationInputModal && 
