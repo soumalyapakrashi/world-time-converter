@@ -16,11 +16,11 @@ export function Home() {
     }, [ locationData ])
 
     const toggleLocationInputModal = () => {
-        setShowMap(false);
         setShowLocationInputModal(!showLocationInputModal);
     }
 
     const addToLocationData = locationData => {
+        setShowMap(false);
         setLocationData(prevState => [ ...prevState, locationData ]);
     }
 
