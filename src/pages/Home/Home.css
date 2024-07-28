@@ -10,7 +10,21 @@
 }
 
 .timezone-card-grid {
-    display: grid;
-    grid-template-columns: 1fr;
+    display: flex;
+    /* grid-template-columns: 1fr; */
     gap: 10px;
+    flex-direction: column;
+}
+
+#main-content {
+    display: flex;
+    justify-content: space-between;
+    height: 100vh;
+}
+
+@media screen and (max-width: 900px) {
+    #main-content {
+        flex-direction: column;
+        height: fit-content;
+    }
 }
