@@ -1,5 +1,6 @@
 import { VectorMap } from "@react-jvectormap/core";
 import { worldMill } from "@react-jvectormap/world";
+import "./WorldMap.css";
 
 export function WorldMap({
     height,
@@ -9,11 +10,12 @@ export function WorldMap({
     return(
         <VectorMap
             map={ worldMill }
-            style={{
-                height: height,
-                width: width,
-                margin: "auto"
-            }}
+            // style={{
+            //     height: height,
+            //     width: width,
+            //     margin: "auto"
+            // }}
+            className="worldmap"
             backgroundColor="rgb(4, 0, 20)"
             zoomMin={ 1 }
             zoomMax={ 1 }

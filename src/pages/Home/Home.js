@@ -37,11 +37,13 @@ export function Home() {
                 </Navbar>
 
                 <main id="main-content">
-                    { showMap && <WorldMap 
-                        height={ "45vh" }
-                        width={ "100%" }
-                        markers={ locationData?.map(data => [ data.latitude, data.longitude ]) }
-                    /> }
+                    <div className="world-time-section">
+                        { showMap && <WorldMap 
+                            height={ "100%" }
+                            width={ "100%" }
+                            markers={ locationData?.map(data => [ data.latitude, data.longitude ]) }
+                        /> }
+                    </div>
 
                     <div className="timezone-card-grid">
                         { locationData?.map((data, index) => {
