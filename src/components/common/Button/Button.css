@@ -1,15 +1,44 @@
 button {
-    font-family: var(--font-text-primary);
-    font-size: 1.7em;
-    color: blue;
-    background-color: var(--dark-primary);
-    border: 1px solid var(--dark-secondary);
-    width: 36px;
-    height: 36px;
+    font-size: 1.2em;
+    /* border: 1px solid var(--dark-secondary); */
+    border: none;
     border-radius: 8px;
+    padding: 5px 20px;
+    cursor: pointer;
 }
 
 button:hover {
-    cursor: pointer;
+    background-color: var(--dark-text-secondary);
+}
+
+.btn-bg-dark-primary {
+    background-color: var(--dark-primary);
+}
+
+.btn-bg-dark-secondary {
     background-color: var(--dark-secondary);
+}
+
+.btn-bg-light-primary {
+    background-color: var(--dark-text-primary);
+}
+
+.btn-bg-light-secondary {
+    color: var(--dark-text-secondary);
+}
+
+.btn-font-dark-primary {
+    color: var(--dark-primary);
+}
+
+.btn-font-dark-secondary {
+    color: var(--dark-secondary);
+}
+
+.btn-font-light-primary {
+    color: var(--dark-text-primary);
+}
+
+.btn-font-light-secondary {
+    color: var(--dark-text-secondary);
 }

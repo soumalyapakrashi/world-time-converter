@@ -3,10 +3,11 @@ import "./Button.css";
 export function Button({
     text,
     onClickHandler,
+    className,
 }) {
     return(
-        <button onClick={ onClickHandler }>
-            { text }
+        <button onClick={ onClickHandler } className={ `${className}` }>
+            { text && <p>{ text }</p> }
         </button>
     )
 }

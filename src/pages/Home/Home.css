@@ -22,11 +22,29 @@
     flex-basis: 60%;
 }
 
+.empty-list-add-item {
+    display: flex;
+    align-items: center;
+    flex-basis: 40%;
+}
+
+.empty-list-add-item > div {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.empty-list-add-item p {
+    font-size: 1.1em;
+    line-height: 1.5em;
+}
+
 #main-content {
     display: flex;
     justify-content: space-between;
     gap: 20px;
     height: 90vh;
+    transition: 0.5s;
 }
 
 @media screen and (max-width: 900px) {
@@ -34,4 +52,12 @@
         flex-direction: column;
         height: fit-content;
     }
+}
+
+.text-color-primary {
+    color: var(--dark-text-primary);
+}
+
+.home-button {
+    margin-top: 20px;
 }
