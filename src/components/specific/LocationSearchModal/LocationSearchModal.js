@@ -44,7 +44,7 @@ export function LocationSearchModal({ closeModal, addData }) {
                     <form id="modal-form" onSubmit={ onFormSubmit }>
                         <h2 className="modal-header form-element">Enter Location</h2>
                         <div className="form-element">
-                            <input type="text" id="modal-textbox" name="location"/>
+                            <input type="text" id="modal-textbox" name="location" autoFocus={ true }/>
                         </div>
                     </form>
 
