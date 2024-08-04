@@ -18,8 +18,8 @@ export function LocationSearchModal({ closeModal, addData }) {
                         id: locationData.place_id,
                         name: locationData.name,
                         displayName: locationData.display_name,
-                        latitude: locationData.lat,
-                        longitude: locationData.lon,
+                        latitude: parseFloat(locationData.lat),
+                        longitude: parseFloat(locationData.lon),
                         country: locationData.address.country,
                     };
                 }))

@@ -15,7 +15,16 @@
     gap: 10px;
     flex-direction: column;
     flex-basis: 40%;
-    margin-top: 40px;
+}
+
+.timezone-card-controls {
+    margin: 20px 0px;
+}
+
+.timezone-card-controls > div {
+    display: flex;
+    gap: 10px;
+    font-size: 0.6em;
 }
 
 .world-time-section {
