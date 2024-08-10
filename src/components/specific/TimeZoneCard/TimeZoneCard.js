@@ -9,7 +9,8 @@ export function TimeZoneCard({
     country,
     pictureUrl,
     latitude,
-    longitude
+    longitude,
+    showDigitalOrAnalogClock = "digital",
 }) {
     const [ timezone, setTimezone ] = useState("local");
     const [ datetimeObj, setDatetimeObj ] = useState(DateTime.local());
@@ -33,7 +34,13 @@ export function TimeZoneCard({
             pictureUrl={ pictureUrl }
             pictureAltText={ "city" }
             cardBody={
-                <div className="timezonecard-body">
+                <div 
+                    className={ `
+                        timezonecard-body
+                        ${showDigitalOrAnalogClock === "analog" ? "flex-direction-column text-align-center" : "flex-direction-row"}
+                        `
+                    }
+                >
                     <div>
                         <h3>{ city } ({ `UTC${offsetInHours > 0 ? "+" : ""}${offsetInHours}` })</h3>
                         <h4>{ country }</h4>
@@ -41,6 +48,7 @@ export function TimeZoneCard({
                     <LocationTime
                         alignment={ "right" }
                         timezone={ timezone }
+                        showDigitalOrAnalogClock={ showDigitalOrAnalogClock }
                     />
                 </div>
             }

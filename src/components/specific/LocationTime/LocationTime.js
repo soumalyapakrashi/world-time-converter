@@ -1,11 +1,13 @@
 import { DateTime } from "luxon";
 import { useEffect, useState } from "react";
+import { AnalogClock } from "../../common/AnalogClock";
 import "./LocationTime.css";
 
 export function LocationTime({
     location,
     timezone = "local",
     alignment = "left",
+    showDigitalOrAnalogClock = "digital",
 }) {
     let time = null;
     let day = null;
@@ -25,15 +27,26 @@ export function LocationTime({
         }, 1000);
     }, [ datetimeObj, timezone ])
 
-
     time = datetimeObj.toLocaleString(DateTime.TIME_24_SIMPLE);
     day = datetimeObj.toLocaleString({ weekday: 'long' });
     date = datetimeObj.toLocaleString({ day: 'numeric', month: 'short' })
 
     return(
-        <div className={ alignment === "right" ? "location-time flex-align-end" : "location-time flex-align-start" }>
-            <h2>{ time }</h2>
-            <h5>
+        <div className={ `
+                location-time
+                ${ showDigitalOrAnalogClock === "digital" && alignment === "right" ? "flex-align-end" : "flex-align-start" }
+                ${ showDigitalOrAnalogClock === "analog" ? "flex-align-center gap-10 flex-justifiy-between" : "" }
+            `}>
+            { showDigitalOrAnalogClock === "digital" && <h2>{ time }</h2> }
+            { 
+                showDigitalOrAnalogClock === "analog" && 
+                <AnalogClock
+                    time={ datetimeObj.toLocaleString(DateTime.TIME_WITH_SECONDS) }
+                    theme={ "dark" }
+                    size={ 130 }
+                />
+            }
+            <h5 className={ showDigitalOrAnalogClock === "analog" ? "text-align-center" : "" }>
                 { location && `${location} • ` }
                 { day && `${day} • ` }
                 { date }

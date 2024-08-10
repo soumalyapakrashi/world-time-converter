@@ -10,7 +10,7 @@
     padding: 5px 0px;
 }
 
-.timezone-card-grid {
+.timezone-card-panel {
     display: flex;
     gap: 10px;
     flex-direction: column;
@@ -69,4 +69,19 @@
 
 .home-button {
     margin-top: 20px;
+}
+
+.grid {
+    display: grid;
+    gap: 10px;
+}
+
+.analog-grid {
+    grid-template-columns: 1fr 1fr;
+}
+
+.nav-children {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
 }

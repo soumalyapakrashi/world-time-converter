@@ -13,6 +13,7 @@ export function Home() {
     const [ showLocationInputModal, setShowLocationInputModal ] = useState(false);
     const [ showMap, setShowMap ] = useState(true);
     const [ selectedSort, setSelectedSort ] = useState('');
+    const [ showDigitalOrAnalogClock, setShowAnalogOrDigitalClock ] = useState('digital');
 
     useEffect(() => {
         setShowMap(true);
@@ -61,11 +62,20 @@ export function Home() {
         }
     }
 
+    const toggleDigitalAnalog = () => {
+        if(showDigitalOrAnalogClock === "analog") setShowAnalogOrDigitalClock("digital");
+        else if(showDigitalOrAnalogClock === "digital") setShowAnalogOrDigitalClock("analog");
+    }
+
     return(
         <div className="main-container">
             <div className="margin-container">
                 <Navbar>
-                    { locationData.length > 0 && <div>
+                    { locationData.length > 0 && <div className="nav-children">
+                        <Button
+                            text={ showDigitalOrAnalogClock === "digital" ? "Analog" : "Digital" }
+                            onClickHandler={ toggleDigitalAnalog }
+                        />
                         <Button
                             text={ "+" }
                             onClickHandler={ toggleLocationInputModal }
@@ -99,7 +109,7 @@ export function Home() {
                         </div>
                     </div> }
 
-                    { locationData.length > 0 && <div className="timezone-card-grid">
+                    { locationData.length > 0 && <div className="timezone-card-panel">
                         <div className="timezone-card-controls">
                             <h2 className="poppins-medium text-color-primary">Sort</h2>
                             <div>
@@ -129,18 +139,26 @@ export function Home() {
                                 />
                             </div>
                         </div>
-                        { locationData?.map((data, index) => {
-                            return(
-                                <TimeZoneCard
-                                    key={ index }
-                                    city={ data.name }
-                                    country={ data.country }
-                                    pictureUrl={ data.pictureUrl }
-                                    latitude={ data.latitude }
-                                    longitude={ data.longitude }
-                                />
-                            )
-                        })}
+                        <div
+                            className={`
+                                grid
+                                ${showDigitalOrAnalogClock === "analog" ? "analog-grid" : "digital-grid"}
+                            `}
+                        >
+                            { locationData?.map((data, index) => {
+                                return(
+                                    <TimeZoneCard
+                                        key={ index }
+                                        city={ data.name }
+                                        country={ data.country }
+                                        pictureUrl={ data.pictureUrl }
+                                        latitude={ data.latitude }
+                                        longitude={ data.longitude }
+                                        showDigitalOrAnalogClock={ showDigitalOrAnalogClock }
+                                    />
+                                )
+                            })}
+                        </div>
                     </div> }
                 </main>
 

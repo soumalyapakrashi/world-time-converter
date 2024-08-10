@@ -22,3 +22,19 @@
 .flex-align-end {
     align-items: end;
 }
+
+.text-align-center {
+    text-align: center;
+}
+
+.flex-align-center {
+    align-items: center;
+}
+
+.gap-10 {
+    gap: 10px;
+}
+
+.flex-justify-between {
+    justify-content: space-between;
+}
