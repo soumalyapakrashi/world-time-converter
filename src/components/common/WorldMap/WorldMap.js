@@ -33,10 +33,11 @@ export function WorldMap({
             }}
             markers={ markers }
             onMarkerTipShow={(event, label, code) => {
-                event.preventDefault();
+                // event.preventDefault();
+                // return "Hello World"
             }}
             onMarkerOver={(event, code) => {
-                event.preventDefault();
+                // event.preventDefault();
             }}
             markerStyle={{
                 initial: {

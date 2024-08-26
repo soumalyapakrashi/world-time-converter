@@ -88,7 +88,12 @@ export function Home() {
                         { showMap && <WorldMap 
                             height={ "100%" }
                             width={ "100%" }
-                            markers={ locationData?.map(data => [ data.latitude, data.longitude ]) }
+                            markers={ locationData?.map(data => {
+                                return {
+                                    latLng: [ data.latitude, data.longitude ],
+                                    name: data.name
+                                }
+                            })}
                         /> }
                     </div>
 
