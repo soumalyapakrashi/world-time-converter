@@ -1,70 +1,92 @@
-# Getting Started with Create React App
+# TimeZone App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Contents
+1. [Features](#features)
+2. [Setup Instructions](#setup-instructions)
+3. [References](#references)
 
-## Available Scripts
+## Features
 
-In the project directory, you can run:
+### On page load, a short description is displayed
 
-### `npm start`
+When the page is loaded, a short description of the usage of this app is displayed along with a blank world map. A button is also provided to add a new place for which time data needs to be displayed.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+![picture showing the app when it loads](./docs/images/app-load.jpg)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### Modal to add locations
 
-### `npm test`
+In the modal to add locations, we are presented with an input box. Here, we can add the location for which we want to view the time data. On clicking on Enter, we are displayed 4 cards which show the 4 closest possible matches to the location entered. We will choose any location that matches the one that we are looking for. This selected location will get added to the *Selected Locations* section. Similarly, we can add multiple locations.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Finally, if we are satisfied with our selections, we will select *Submit* button. If we want to clear our selection list, we can click the *Clear* button.
 
-### `npm run build`
+![picture showing the location search modal](./docs/images/modal-location-select.jpg)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Search for any location around the world
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+In the search input box in the modal, we can put in any possible location or address around the world. The entered location string is determined by a Geocoding API and the locations which are closely matching with the entered string is returned. From these, we can select which particular location we are interested in.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Data displayed in both digital and analog clocks
 
-### `npm run eject`
+On finalizing the locations, we can view the time data as both digital and analog clocks. On load, we are presented with digital clocks for each of the locations selected.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+![picture showing digital clocks in the homepage](./docs/images/homepage-digital.jpg)
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+To see clocks in analog format, we can select the *Analog* button on the upper right corner of screen. The clocks for each of the locations selected will be displayed in analog format.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+![picture showing analog clocks in the homepage](./docs/images/homepage-analog.jpg)
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Along with the time and date of the location we have selected, we are also presented with the country in which the selected location resides, and the timezone of that location with respect to UTC (Coordinated Universal Time).
 
-## Learn More
+On the upper right corner, we also see a *+* button. Clicking this again opens up the location search modal which can be used to add subsequent locations after the initial selection.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### Worldmap shows the selected locations
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+In the worldmap, the selected locations are shown as blue-coloured markers. On hovering over these markers, the name of the location is displayed as a tooltip.
 
-### Code Splitting
+![picture showing the markers and tooltip in the world map](./docs/images/worldmap-marker.jpg)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+### Current location and time is displayed
 
-### Analyzing the Bundle Size
+On the top-left corner of the screen, we see the current time and location of the place from where this app is being used. For accessing, the location, user has to give consent for the app to use it's current location. This consent is asked by the browser on the first time this app is loaded. If user does not give consent, then only the time is displayed and current location is not displayed.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+![picture showing current location and time](./docs/images/current-location-time.jpg)
 
-### Making a Progressive Web App
+### Locations can be sorted based on name and time
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+The locations in the list can be sorted based on the following:
 
-### Advanced Configuration
+1. Ascending order based on it's name
+2. Descending order based on it's name
+3. Ascending order based on it's time. Places on the west come before than those on the east.
+4. Descending order based on it's time. Places on the east come before that those on the west.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+![picture showing places sorted in ascending order of their name](./docs/images/sort-name-ascending.jpg)
 
-### Deployment
+![picture showing places sorted in descending order of their time](./docs/images/sort-time-descending.jpg)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+## Setup Instructions
 
-### `npm run build` fails to minify
+**Step 1:** Install NodeJS in system (if not already installed) from [official website](https://nodejs.org/en).
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+**Step 2:** Clone the GitHub repository in local system.
+
+```bash
+https://github.com/soumalyapakrashi/world-time-converter.git
+```
+
+**Step 3:** Open a terminal in the downloaded folder *world-time-converter* and install the dependencies of the project by running the following command.
+
+```bash
+npm install
+```
+
+**Step 4:** Run the development build of the app locally by running the following command.
+
+```bash
+npm start
+```
+
+## References
+
+1. Geocoding API: [Nominatim](https://nominatim.org/)
+2. Timezone API: [The Weather API](https://www.weatherapi.com/)
