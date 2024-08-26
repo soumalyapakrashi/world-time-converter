@@ -25,9 +25,9 @@
 }
 
 .matched-locations {
-    display: flex;
+    display: grid;
     gap: 10px;
-    flex-direction: column;
+    grid-template-columns: 1fr 1fr;
 }
 
 .modal-card {
@@ -43,12 +43,46 @@
 
 .modal-card h5 {
     color: var(--dark-text-primary);
-    font-size: 1.2em;
+    font-size: 1em;
     font-family: var(--font-text-primary);
 }
 
 .modal-card p {
     color: var(--dark-text-secondary);
+    font-size: 0.8em;
+    font-family: var(--font-text-primary);
+}
+
+.mt-4 {
+    margin-top: 40px;
+}
+
+.selected-locations {
+    margin-top: 20px;
+}
+
+.selected-locations h3 {
+    color: var(--dark-text-primary);
     font-size: 1em;
     font-family: var(--font-text-primary);
+    margin-bottom: 10px;
+}
+
+.text-align-center {
+    text-align: center;
+}
+
+.modal-controls {
+    font-size: 0.8em;
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.selected-cards {
+    display: flex;
+    width: fit-content;
+    gap: 5px;
+    flex-wrap: wrap;
 }

@@ -9,7 +9,7 @@
 }
 
 .modal-content {
-    width: 90%;
+    width: 60%;
     margin: 80px auto auto auto;
     padding: 10px 15px;
     background-color: var(--dark-secondary);

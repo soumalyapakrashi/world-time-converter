@@ -25,7 +25,7 @@ export function Home() {
 
     const addToLocationData = locationData => {
         setShowMap(false);
-        setLocationData(prevState => [ ...prevState, locationData ]);
+        setLocationData(prevState => [ ...prevState, ...locationData ]);
         if(selectedSort !== '') {
             onSortHandler(selectedSort);
         }

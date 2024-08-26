@@ -43,7 +43,7 @@ export function LocationTime({
                 <AnalogClock
                     time={ datetimeObj.toLocaleString(DateTime.TIME_WITH_SECONDS) }
                     theme={ "dark" }
-                    size={ 130 }
+                    size={ 100 }
                 />
             }
             <h5 className={ showDigitalOrAnalogClock === "analog" ? "text-align-center" : "" }>
