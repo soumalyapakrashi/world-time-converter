@@ -3,18 +3,11 @@ import { worldMill } from "@react-jvectormap/world";
 import "./WorldMap.css";
 
 export function WorldMap({
-    height,
-    width,
-    markers = []
-}) {    
+    markers = [],
+}) {
     return(
         <VectorMap
             map={ worldMill }
-            // style={{
-            //     height: height,
-            //     width: width,
-            //     margin: "auto"
-            // }}
             className="worldmap"
             backgroundColor="rgb(4, 0, 20)"
             zoomMin={ 1 }
@@ -32,13 +25,6 @@ export function WorldMap({
                 }
             }}
             markers={ markers }
-            onMarkerTipShow={(event, label, code) => {
-                // event.preventDefault();
-                // return "Hello World"
-            }}
-            onMarkerOver={(event, code) => {
-                // event.preventDefault();
-            }}
             markerStyle={{
                 initial: {
                     fill: "blue",

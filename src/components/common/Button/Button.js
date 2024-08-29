@@ -5,9 +5,10 @@ export function Button({
     onClickHandler,
     className,
     name,
+    type = "button",
 }) {
     return(
-        <button onClick={ onClickHandler } className={ `${className}` } name={ name }>
+        <button onClick={ onClickHandler } className={ `${className}` } name={ name } type={ type }>
             { text && <p>{ text }</p> }
         </button>
     )

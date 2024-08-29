@@ -2,6 +2,7 @@ import { DateTime } from "luxon";
 import { useEffect, useState } from "react";
 import { AnalogClock } from "../../common/AnalogClock";
 import "./LocationTime.css";
+import { useSelector } from "react-redux";
 
 export function LocationTime({
     location,
@@ -12,6 +13,8 @@ export function LocationTime({
     let time = null;
     let day = null;
     let date = null;
+
+    const clockPrecision = useSelector(state => state.clockPrecision);
     
     // By default, as local timezone is selected, we create date in local time
     const [ datetimeObj, setDatetimeObj ] = useState(DateTime.local());
@@ -27,7 +30,12 @@ export function LocationTime({
         }, 1000);
     }, [ datetimeObj, timezone ])
 
-    time = datetimeObj.toLocaleString(DateTime.TIME_24_SIMPLE);
+    if(clockPrecision === "hours:minutes") {
+        time = datetimeObj.toLocaleString(DateTime.TIME_24_SIMPLE);
+    }
+    else if(clockPrecision === "hours:minutes:seconds") {
+        time = datetimeObj.toLocaleString(DateTime.TIME_24_WITH_SECONDS);
+    }
     day = datetimeObj.toLocaleString({ weekday: 'long' });
     date = datetimeObj.toLocaleString({ day: 'numeric', month: 'short' })
 

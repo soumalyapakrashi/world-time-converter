@@ -7,6 +7,8 @@ import { Button } from "../../components/common/Button";
 import "./Home.css";
 import "../../assets/fonts/font-poppins.css";
 import "../../assets/fonts/font-montserrat.css";
+import { ConfigureModal } from "../../components/specific/ConfigureModal/ConfigureModal";
+import { useDispatch } from "react-redux";
 
 export function Home() {
     const [ locationData, setLocationData ] = useState([]);
@@ -14,6 +16,8 @@ export function Home() {
     const [ showMap, setShowMap ] = useState(true);
     const [ selectedSort, setSelectedSort ] = useState('');
     const [ showDigitalOrAnalogClock, setShowAnalogOrDigitalClock ] = useState('digital');
+    const [ showConfigureModal, setShowConfigureModal ] = useState(false);
+    const dispatch = useDispatch();
 
     useEffect(() => {
         setShowMap(true);
@@ -21,6 +25,10 @@ export function Home() {
 
     const toggleLocationInputModal = () => {
         setShowLocationInputModal(!showLocationInputModal);
+    }
+
+    const toggleConfigureModal = () => {
+        setShowConfigureModal(!showConfigureModal);
     }
 
     const addToLocationData = locationData => {
@@ -63,8 +71,20 @@ export function Home() {
     }
 
     const toggleDigitalAnalog = () => {
-        if(showDigitalOrAnalogClock === "analog") setShowAnalogOrDigitalClock("digital");
-        else if(showDigitalOrAnalogClock === "digital") setShowAnalogOrDigitalClock("analog");
+        if(showDigitalOrAnalogClock === "analog") {
+            setShowAnalogOrDigitalClock("digital");
+            dispatch({
+                type: "clockType",
+                value: "digital"
+            })
+        }
+        else if(showDigitalOrAnalogClock === "digital") {
+            setShowAnalogOrDigitalClock("analog");
+            dispatch({
+                type: "clockType",
+                value: "analog"
+            })
+        }
     }
 
     return(
@@ -72,6 +92,10 @@ export function Home() {
             <div className="margin-container">
                 <Navbar>
                     { locationData.length > 0 && <div className="nav-children">
+                        <Button
+                            text="Configure"
+                            onClickHandler={ toggleConfigureModal }
+                        />
                         <Button
                             text={ showDigitalOrAnalogClock === "digital" ? "Analog" : "Digital" }
                             onClickHandler={ toggleDigitalAnalog }
@@ -173,6 +197,14 @@ export function Home() {
                         closeModal={ toggleLocationInputModal }
                         addData={ addToLocationData }
                     /> 
+                }
+
+                {
+                    showConfigureModal &&
+                    <ConfigureModal
+                        closeModal={ toggleConfigureModal }
+
+                    />
                 }
             </div>
         </div>
