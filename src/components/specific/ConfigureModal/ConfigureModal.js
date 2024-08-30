@@ -2,6 +2,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { Modal } from "../../common/Modal";
 import { Button } from "../../common/Button";
 import { Select } from "../../common/Select";
+import { ClockTypes } from "../../../store/Configurations";
 import "../../../assets/fonts/font-poppins.css";
 import "./ConfigureModal.css";
 
@@ -29,16 +30,7 @@ export function ConfigureModal({
                     <form className="configure-form" onSubmit={ modalSubmitHandler }>
                         <h3 className="poppins-regular font-color-light">Digital Clock Precision</h3>
                         <Select
-                            options={[
-                                {
-                                    value: "hours:minutes",
-                                    displayText: "Hours : Minutes"
-                                },
-                                {
-                                    value: "hours:minutes:seconds",
-                                    displayText: "Hours : Minutes : Seconds"
-                                },
-                            ]}
+                            options={ ClockTypes }
                             name="clockprecision"
                             className="configuration-select"
                             defaultValue={ clockPrecision === "hours:minutes" ? "hours:minutes" : "hours:minutes:seconds" }
