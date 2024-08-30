@@ -1,0 +1,42 @@
+.card-img img {
+    height: 60px;
+    width: 100px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.timezonecard-body h3 {
+    color: var(--dark-text-primary);
+    font-family: var(--font-text-primary);
+    font-weight: 500;
+    font-size: 1em;
+    margin-bottom: 3px;
+}
+
+.timezonecard-body h4 {
+    color: var(--dark-text-secondary);
+    font-family: var(--font-text-primary);
+    font-weight: 400;
+    font-size: 0.9em;
+}
+
+.timezonecard-body {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+.flex-direction-row {
+    flex-direction: row;
+}
+
+.flex-direction-column {
+    flex-direction: column;
+}
+
+.text-align-center {
+    text-align: center;
+}

@@ -1,5 +1,4 @@
-import './App.css';
-import { Home } from './containers/Home/Home';
+import { Home } from './pages/Home';
 
 function App() {
   return (

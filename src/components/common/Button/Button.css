@@ -1,0 +1,48 @@
+button {
+    font-size: 1.2em;
+    /* border: 1px solid var(--dark-secondary); */
+    border: none;
+    border-radius: 8px;
+    padding: 5px 20px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: var(--dark-text-secondary);
+}
+
+.btn-bg-dark-primary {
+    background-color: var(--dark-primary);
+}
+
+.btn-bg-dark-secondary {
+    background-color: var(--dark-secondary);
+}
+
+.btn-bg-light-primary {
+    background-color: var(--dark-text-primary);
+}
+
+.btn-bg-light-secondary {
+    color: var(--dark-text-secondary);
+}
+
+.btn-font-dark-primary {
+    color: var(--dark-primary);
+}
+
+.btn-font-dark-secondary {
+    color: var(--dark-secondary);
+}
+
+.btn-font-light-primary {
+    color: var(--dark-text-primary);
+}
+
+.btn-font-light-secondary {
+    color: var(--dark-text-secondary);
+}
+
+.btn-disabled {
+    cursor: not-allowed;
+}

@@ -1,0 +1,23 @@
+.font-color-light {
+    color: var(--dark-text-primary);
+}
+
+.padding-20 {
+    padding: 20px;
+}
+
+.configure-form {
+    width: 100%;
+}
+
+.configuration-select {
+    margin-top: 5px;
+}
+
+.modal-controls {
+    font-size: 0.8em;
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    margin-top: 20px;
+}

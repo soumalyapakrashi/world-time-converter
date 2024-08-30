@@ -1,0 +1,87 @@
+.main-container {
+    background-color: var(--dark-primary);
+    min-height: 100vh;
+}
+
+.margin-container {
+    width: 90%;
+    /* min-height: 100vh; */
+    margin: auto;
+    padding: 5px 0px;
+}
+
+.timezone-card-panel {
+    display: flex;
+    gap: 10px;
+    flex-direction: column;
+    flex-basis: 40%;
+}
+
+.timezone-card-controls {
+    margin: 20px 0px;
+}
+
+.timezone-card-controls > div {
+    display: flex;
+    gap: 10px;
+    font-size: 0.6em;
+}
+
+.world-time-section {
+    flex-basis: 60%;
+}
+
+.empty-list-add-item {
+    display: flex;
+    align-items: center;
+    flex-basis: 40%;
+}
+
+.empty-list-add-item > div {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.empty-list-add-item p {
+    font-size: 1.1em;
+    line-height: 1.5em;
+}
+
+#main-content {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    height: 90vh;
+    transition: 0.5s;
+}
+
+@media screen and (max-width: 900px) {
+    #main-content {
+        flex-direction: column;
+        height: fit-content;
+    }
+}
+
+.text-color-primary {
+    color: var(--dark-text-primary);
+}
+
+.home-button {
+    margin-top: 20px;
+}
+
+.grid {
+    display: grid;
+    gap: 10px;
+}
+
+.analog-grid {
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.nav-children {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}

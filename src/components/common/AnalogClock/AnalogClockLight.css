@@ -1,0 +1,15 @@
+.react-clock-light .react-clock__face {
+    border: 1px solid white;
+}
+
+.react-clock-light .react-clock__hand__body {
+    background-color: white;
+}
+
+.react-clock-light .react-clock__mark__body {
+    background-color: white;
+}
+
+.react-clock-light .react-clock__second-hand__body {
+    background-color: red;
+}
