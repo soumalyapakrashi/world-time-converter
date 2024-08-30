@@ -27,7 +27,7 @@ export function LocationSearchModal({ closeModal, addData }) {
                 })
 
                 // We will take only the first 4 matches
-                data = data.slice(0, 4);
+                data = data?.slice(0, 4);
 
                 setPossibleLocations(data.map(locationData => {
                     return {
