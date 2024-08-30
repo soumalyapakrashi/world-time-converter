@@ -6,9 +6,16 @@ export function Button({
     className,
     name,
     type = "button",
+    disabled = null
 }) {
     return(
-        <button onClick={ onClickHandler } className={ `${className}` } name={ name } type={ type }>
+        <button
+            onClick={ onClickHandler }
+            className={ `${className} ${disabled && "btn-disabled"}` }
+            name={ name }
+            type={ type }
+            disabled={ disabled ? "true" : "" }
+        >
             { text && <p>{ text }</p> }
         </button>
     )

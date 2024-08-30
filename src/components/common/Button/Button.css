@@ -42,3 +42,7 @@ button:hover {
 .btn-font-light-secondary {
     color: var(--dark-text-secondary);
 }
+
+.btn-disabled {
+    cursor: not-allowed;
+}
