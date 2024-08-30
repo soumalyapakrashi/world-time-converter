@@ -5,6 +5,7 @@ export function Modal({
     content,
     onModalCloseHandler,
     closeOnlyThroughCloseButton = true,
+    className,
 }) {
     const modalRef = useRef();
 
@@ -16,7 +17,7 @@ export function Modal({
 
     return(
         <div className="modal-base" ref={ modalRef } onClick={ onModalClose }>
-            <div className="modal-content">
+            <div className={ `${className} modal-content` }>
                 <span
                     className="modal-close-icon"
                     onClick={ onModalCloseHandler }
