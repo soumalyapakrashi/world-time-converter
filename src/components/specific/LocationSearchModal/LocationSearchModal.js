@@ -49,7 +49,7 @@ export function LocationSearchModal({ closeModal, addData }) {
     }
 
     const onModalCardSelected = event => {
-        setSelectedLocations([ ...selectedLocations, possibleLocations.filter(location => location?.id == event?.currentTarget?.id)[0] ]);
+        setSelectedLocations([ ...selectedLocations, possibleLocations.filter(location => location?.id === parseInt(event?.currentTarget?.id))[0] ]);
         locationInputRef.current.value = '';
     }
 
