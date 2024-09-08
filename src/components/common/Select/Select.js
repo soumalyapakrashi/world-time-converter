@@ -20,7 +20,7 @@ export function Select({
             {
                 options.map(option => {
                     return(
-                        <option value={ option.value }>
+                        <option value={ option.value } key={ option.value }>
                             { option.displayText }
                         </option>
                     )
